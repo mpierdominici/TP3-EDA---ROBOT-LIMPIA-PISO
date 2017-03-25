@@ -38,10 +38,10 @@ bool simulacion::EstoyDibujando()
 	return false;
 }
 
-void simulacion::Simulacion(uint16_t NumeroDeRobots, float_t X, float_t Y)
+simulacion::simulacion(uint16_t NumeroDeRobots, float_t X, float_t Y)
 {
 }
 
-void simulacion::Simulacion(uint16_t NumeroDeRobots, float_t X, float_t Y, graficar * GraficarSimulacion)
+simulacion::simulacion(uint16_t NumeroDeRobots, float_t X, float_t Y, graficar * GraficarSimulacion)
 {
 }

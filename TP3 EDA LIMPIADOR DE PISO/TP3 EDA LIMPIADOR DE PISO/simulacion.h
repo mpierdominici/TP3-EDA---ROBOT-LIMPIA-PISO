@@ -21,5 +21,5 @@ public:
 	void StopGraficar();//dejo de graficar
 	bool EstoyDibujando();//prgunto si estoy dibujando
 	simulacion(uint16_t NumeroDeRobots, float_t X, float_t Y);//constructores
-	simulacion(uint16_t NumeroDeRobots, float_t X, float_t Y, graficar * GraficarSimulacion);//constructores
+//	simulacion(uint16_t NumeroDeRobots, float_t X, float_t Y, graficar * GraficarSimulacion);//constructores
 };

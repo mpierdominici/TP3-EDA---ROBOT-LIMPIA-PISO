@@ -7,12 +7,12 @@ bool simulacion::ProximaSimulacion()
 
 uint64_t simulacion::GetTick()
 {
-	return uint64_t();
+	return NumeroDeTicks;
 }
 
 uint16_t simulacion::GetNumeroDeRobots()
 {
-	return uint16_t();
+	return NumeroDeRobots;
 }
 
 float_t simulacion::GetPisoAncho()

@@ -21,24 +21,34 @@ graficar::graficar(uint16_t HeightScreen_C, uint16_t WithScreen_C, piso * Piso_C
 		{
 			al_destroy_display(Display);
 		}
-		
-
+		if (!al_init_primitives_addon())
+		{
+			
+		}
 	}
 }
 
 void graficar::GraficarMachine()
 {
-	for (int x = 0; x < WithScreen; x+= LARGO_BALDOSA)
+	al_clear_to_color(al_map_rgb(255, 255, 0));
+
+	al_flip_display();
+
+	for (int x = 1; x <= (WithScreen*LARGO_BALDOSA); x+= LARGO_BALDOSA)
 	{
-		for (int y = 0; y < HeightScreen; y+= LARGO_BALDOSA)
+		for (int y = 1; y <= (HeightScreen*LARGO_BALDOSA); y+= LARGO_BALDOSA)
 		{
 			if ((PisoDraw->esta_sucio(x, y)) == true)//la valsoda esta sucia
 			{
 				al_draw_filled_rectangle(x, y, x + LARGO_BALDOSA, y + LARGO_BALDOSA, al_map_rgb(rand() % 255, rand() % 255, rand() % 255));
+				al_flip_display();
+
 			}
 			else
 			{
 				al_draw_filled_rectangle(x, y, x + LARGO_BALDOSA, y + LARGO_BALDOSA, al_map_rgb(255, 255, 255));
+				al_flip_display();
+
 			}
 		}
 	}

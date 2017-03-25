@@ -9,6 +9,7 @@ int main()
 {
 	piso pi;
 	pi.asignar_piso(10, 10);
+	pi.setear_sucio();
 	graficar p(10, 10,&pi);
 	p.GraficarMachine();
 

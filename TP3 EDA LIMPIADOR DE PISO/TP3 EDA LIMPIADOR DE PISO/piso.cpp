@@ -11,7 +11,7 @@ piso::piso()
 
 void piso::asignar_piso(unsigned int a, unsigned int l)
 {
-	arreglo_baldosa = new bool[a*l];
+	arreglo_baldosa = new bool [a*l];
 	
     ancho_de_tablero= a;
     alto_de_tablero=l;

@@ -15,11 +15,11 @@ public:
 	bool ProximaSimulacion();//metodo que avansa un tick la simulacion y devuelve si se limpio el piso
 	uint64_t GetTick();//devuelve la cantidad de ticks que le demoro en limpiar el piso
 	uint16_t GetNumeroDeRobots();//devuelve la cantidad de robots seteados para la simulacion
-	float_t GetPisoAncho();
-	float_t GetPisoAlto();
-	void StartGraficar();
-	void StopGraficar();
-	bool EstoyDibujando();
-	void Simulacion(uint16_t NumeroDeRobots, float_t X, float_t Y);
-	void Simulacion(uint16_t NumeroDeRobots, float_t X, float_t Y, graficar * GraficarSimulacion);
+	float_t GetPisoAncho();//devuelve ancho del piso
+	float_t GetPisoAlto();//devuelve alto del piso
+	void StartGraficar();//inicio que se grafique
+	void StopGraficar();//dejo de graficar
+	bool EstoyDibujando();//prgunto si estoy dibujando
+	void Simulacion(uint16_t NumeroDeRobots, float_t X, float_t Y);//constructores
+	void Simulacion(uint16_t NumeroDeRobots, float_t X, float_t Y, graficar * GraficarSimulacion);//constructores
 };

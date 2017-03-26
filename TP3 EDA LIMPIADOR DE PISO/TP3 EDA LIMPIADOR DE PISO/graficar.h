@@ -1,5 +1,17 @@
+
+#ifndef GRAFICAR_H
+#define GRAFICAR_H
 #include <stdint.h>
-#include <allegro5/allegro.h>
+
+#include <allegro5/allegro_primitives.h>
+#include <allegro5\allegro.h>
+#include <allegro5\allegro_image.h>
+#include <allegro5\allegro_color.h>
+#include<allegro5\allegro_primitives.h>
+#include <allegro5/allegro_font.h>
+#include <allegro5/allegro_ttf.h>
+#include <allegro5/allegro_audio.h>
+#include <allegro5/allegro_acodec.h>
 #include "piso.h"
 class point
 {
@@ -19,7 +31,10 @@ private:
 	ALLEGRO_DISPLAY * Display;
 public:
 	graficar (uint16_t HighScreen, uint16_t WithScreen, piso * Piso_C);
-	void GraficarMachine();
+	void GraficarPiso();
 	bool GraficarCorrectaInicializacion();
+	void GraficarIntro();
+	void GraficarFin();
 };
 
+#endif

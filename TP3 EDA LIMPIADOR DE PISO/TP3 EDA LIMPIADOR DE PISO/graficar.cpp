@@ -1,7 +1,11 @@
 #include "graficar.h"
-#include <allegro5/allegro_primitives.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <iostream>
+#include "intro.h"
+#include "finalizar.h"
+
+
 #define LARGO_BALDOSA 50
 //graficar(uint16_t HeightScreen_C, uint16_t WithScreen_C)
 //constructor de graficatr
@@ -17,18 +21,39 @@ graficar::graficar(uint16_t HeightScreen_C, uint16_t WithScreen_C, piso * Piso_C
 	if (al_init())
 	{
 		Display = al_create_display(WithScreen* LARGO_BALDOSA, HeightScreen * LARGO_BALDOSA);
-		if (Display == NULL)
+		if (Display != NULL)
 		{
-			al_destroy_display(Display);
+			if (al_init_primitives_addon())
+			{ 
+				if (al_init_image_addon())
+				{
+					if (al_init_acodec_addon())
+					{
+						if (al_install_audio())
+						{
+							if (al_reserve_samples(1))
+							{
+								if (al_init_font_addon())
+								{
+									if (al_init_ttf_addon())
+									{
+										return;
+									}
+								}
+							}
+						}
+					}
+					
+				}
+				
+			}
 		}
-		if (!al_init_primitives_addon())
-		{
-			
-		}
+		al_destroy_display(Display);
+		
 	}
 }
 
-void graficar::GraficarMachine()
+void graficar::GraficarPiso()
 {
 	al_clear_to_color(al_map_rgb(255, 255, 0));
 
@@ -70,4 +95,14 @@ bool graficar::GraficarCorrectaInicializacion()
 	{
 		return true;
 	}
+}
+
+void graficar::GraficarIntro()
+{
+	intro_efectos(Display, WithScreen*LARGO_BALDOSA, HeightScreen*LARGO_BALDOSA);
+}
+
+void graficar::GraficarFin()
+{
+	efectos_para_finalizar(Display, WithScreen*LARGO_BALDOSA, HeightScreen*LARGO_BALDOSA);
 }

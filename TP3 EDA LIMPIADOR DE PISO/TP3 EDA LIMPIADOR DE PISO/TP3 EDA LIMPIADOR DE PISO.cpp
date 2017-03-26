@@ -5,14 +5,17 @@
 #include <iostream>
 #include "graficar.h"
 #include "piso.h"
+#define ALTO_BALDOSAS 10
+#define ANCHO_BALDOSAS 20
 int main()
 {
 	piso pi;
-	pi.asignar_piso(10, 10);
+	pi.asignar_piso(ANCHO_BALDOSAS, ALTO_BALDOSAS);
 	pi.setear_sucio();
-	graficar p(10, 10,&pi);
-	p.GraficarMachine();
-
+	graficar p(ALTO_BALDOSAS, ANCHO_BALDOSAS,&pi);
+	p.GraficarIntro();
+	p.GraficarPiso();
+	p.GraficarFin();
 
     return 0;
 }

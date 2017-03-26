@@ -65,7 +65,7 @@ void graficar::GraficarPiso()
 		{
 			if ((PisoDraw->esta_sucio(x, y)) == true)//la valsoda esta sucia
 			{
-				al_draw_filled_rectangle(x, y, x + LARGO_BALDOSA, y + LARGO_BALDOSA, al_map_rgb(rand() % 255, rand() % 255, rand() % 255));
+				al_draw_filled_rectangle(x, y, x + LARGO_BALDOSA, y + LARGO_BALDOSA, al_map_rgb(rand() % 200, rand() % 200, rand() % 200));
 				al_flip_display();
 
 			}
@@ -105,4 +105,16 @@ void graficar::GraficarIntro()
 void graficar::GraficarFin()
 {
 	efectos_para_finalizar(Display, WithScreen*LARGO_BALDOSA, HeightScreen*LARGO_BALDOSA);
+}
+
+void graficar::SetRobotPosition(float _x, float _y)
+{
+	DrawMachine.x = _x;
+	DrawMachine.y = _y;
+}
+
+void graficar::DrawRobot()
+{
+	al_draw_filled_circle((DrawMachine.x)*LARGO_BALDOSA, (DrawMachine.y)*LARGO_BALDOSA, 10, al_map_rgb(255, 255, 255));
+	al_flip_display();
 }

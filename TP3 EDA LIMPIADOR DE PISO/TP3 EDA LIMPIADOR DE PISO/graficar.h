@@ -35,6 +35,8 @@ public:
 	bool GraficarCorrectaInicializacion();
 	void GraficarIntro();
 	void GraficarFin();
+	void SetRobotPosition(float _x, float _y);
+	void DrawRobot();
 };
 
 #endif

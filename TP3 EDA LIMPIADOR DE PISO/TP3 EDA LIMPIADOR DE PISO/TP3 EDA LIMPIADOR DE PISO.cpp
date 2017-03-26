@@ -13,8 +13,13 @@ int main()
 	pi.asignar_piso(ANCHO_BALDOSAS, ALTO_BALDOSAS);
 	pi.setear_sucio();
 	graficar p(ALTO_BALDOSAS, ANCHO_BALDOSAS,&pi);
-	p.GraficarIntro();
+	//p.GraficarIntro();
 	p.GraficarPiso();
+	p.SetRobotPosition(1.5, 1.5);
+	p.DrawRobot();
+	
+	
+	
 	p.GraficarFin();
 
     return 0;

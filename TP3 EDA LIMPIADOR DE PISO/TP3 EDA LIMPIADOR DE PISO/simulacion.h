@@ -1,7 +1,7 @@
 
 #include <stdint.h>
 #include "piso.h"
-
+#include "graficar.h"
 class simulacion {
 
 private:
@@ -9,7 +9,7 @@ private:
 	uint64_t NumeroDeTicks; //cantidad de pasos "ticks" que se requirierion para limpiar el piso
 	piso SuperficieAlimpiar;//objeto piso, el que los robots limpian
 	// robot * RobotsLimpiadores; //puntero a objetos de clase robot
-	// graficar * GraficarSimulacion; //puntero a objeto de clase graficar, si se desea o no graficar la simulacion
+	graficar * GraficarSimulacion; //puntero a objeto de clase graficar, si se desea o no graficar la simulacion
 
 public:
 	bool ProximaSimulacion();//metodo que avansa un tick la simulacion y devuelve si se limpio el piso
@@ -21,5 +21,5 @@ public:
 	void StopGraficar();//dejo de graficar
 	bool EstoyDibujando();//prgunto si estoy dibujando
 	simulacion(uint16_t NumeroDeRobots, float_t X, float_t Y);//constructores
-//	simulacion(uint16_t NumeroDeRobots, float_t X, float_t Y, graficar * GraficarSimulacion);//constructores
+	simulacion(uint16_t NumeroDeRobots, float_t X, float_t Y, graficar * GraficarSimulacion);//constructores
 };

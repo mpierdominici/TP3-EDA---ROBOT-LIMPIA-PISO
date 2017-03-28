@@ -21,7 +21,7 @@ public:
 	bool asignacion_correcta(); //funcion para ver si el malloc que se hizo se asigno bien
 	void setear_sucio();			//Pone todo en 0 
 	void destroy_piso();
-
+	bool TodoLimpio(); // devuelve true si todo el piso esta limpio
 	//SOBRECARGAS 
 	// por si es util recibir parametros de otra manera
 

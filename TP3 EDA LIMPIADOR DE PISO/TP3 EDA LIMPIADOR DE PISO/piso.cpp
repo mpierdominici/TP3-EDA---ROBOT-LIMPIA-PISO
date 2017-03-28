@@ -81,3 +81,9 @@ void piso::destroy_piso()
 	  delete [] (arreglo_baldosa);
 
 }
+
+bool piso::TodoLimpio()
+{
+	
+	return false;
+}
